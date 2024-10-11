@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة إدخال الاسم</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e9ecef;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 0;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        .decorative-border {
+            border: 5px solid #007bff;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: white;
+            max-width: 800px;
+            margin: 50px auto;
+            position: relative;
+        }
+
+        label {
+            font-size: 20px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        input[type="text"] {
+            font-size: 18px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid #007bff;
+            width: 80%;
+            max-width: 300px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>مرحبًا بكم في صفحتي المزخرفة</h1>
+    </header>
+
+    <div class="decorative-border">
+        <label for="nameInput">أدخل اسمك:</label>
+        <input type="text" id="nameInput" placeholder="اكتب اسمك هنا">
+        <button onclick="checkName()">إرسال</button>
+        <p id="message" class="message"></p>
+    </div>
+
+    <script>
+        function checkName() {
+            var name = document.getElementById("nameInput").value;
+            var allowedNames = ["نهار"];
+            var message = "";
+
+            if (allowedNames.includes(name)) {
+                message = "ياخي وربي انك رجال";
+            } else {
+                message = "عذرًا، الاسم الذي أدخلته غير معروف!";
+            }
+
+            document.getElementById("message").textContent = message;
+            document.getElementById("nameInput").value = "";
+        }
+    </script>
+
+</body>
+</html>
